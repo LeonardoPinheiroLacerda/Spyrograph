@@ -2,8 +2,9 @@ class MathUtils {
 
     cycleDistance = 2 * Math.PI;
 
-    //Unidade de distancia é igual a uma volta completa em torno do ponto pai
-    //Unidade de tempo é segundos
+    // Unidade de velocidade é igual a voltas por segundo
+    // Unidade de distancia é uma volta completa em torno do ponto pai
+    // Unidade de tempo é segundos
 
     getDistance = (velocity, time) => {
         return velocity * time;
@@ -17,7 +18,7 @@ class MathUtils {
         return (this.cycleDistance * distance) / velocity;
     }
 
-    calcPointPosition = (radius, distance, centerX, centerY) => {
+    calcPencilPosition = (radius, distance, centerX, centerY) => {
         const x = radius * Math.cos((this.cycleDistance * distance)) + centerX;
         const y = radius * Math.sin((this.cycleDistance * distance)) + centerY;
         return {x, y};
