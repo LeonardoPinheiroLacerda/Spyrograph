@@ -134,8 +134,7 @@ class Spyrograph {
                 direction,
                 color,
                 drawLine,
-                drawConectLine,
-                history: []
+                drawConectLine
             }
         )
         this.restart();
@@ -148,8 +147,7 @@ class Spyrograph {
             direction,
             color,
             drawLine,
-            drawConectLine,
-            history: []
+            drawConectLine
         }
 
         this.restart();
