@@ -7,6 +7,22 @@ class Spyrograph {
         this.context = canvas.getContext("2d");
     }
 
+    debugOption = {
+        enabled: false,
+        backgroundColor: 'rgba(255, 255, 255, 0.7)',
+        fontColor: 'black',
+        fontFamily: 'Monospace',
+        fontSize: 20,
+
+
+        box: {
+            x: 20,
+            y: 20,
+            margin: 10,
+            lineSpacing: 5
+        }
+    }
+
     mathUtils = new MathUtils();
 
     backgroundColor = "rgb(0, 0, 0)";
@@ -107,6 +123,40 @@ class Spyrograph {
 
     }
 
+    drawDebug = () => {
+
+        if(this.debugOption.enabled) {
+
+            const Ycoord = (line) => {
+                return (this.debugOption.box.y + this.debugOption.fontSize + this.debugOption.box.margin) + (this.debugOption.fontSize + this.debugOption.box.lineSpacing) * line;
+            }
+            const Xcoord = (tab = false) => {
+                return this.debugOption.box.x + this.debugOption.box.margin + (tab ? 10 : 0);
+            } 
+
+            this.context.beginPath();
+
+            this.context.fillStyle = this.debugOption.backgroundColor;
+            this.context.fillRect(this.debugOption.box.x, this.debugOption.box.y, 1200, (this.debugOption.box.margin * 2) + (this.debugOption.fontSize + this.debugOption.box.lineSpacing) * (this.points.length + 1));
+            this.context.fill();
+
+            this.context.font = `${this.debugOption.fontSize}px ${this.debugOption.fontFamily}`;
+            this.context.fillStyle = this.debugOption.fontColor;
+            this.context.fillText("Points:", Xcoord(false), Ycoord(0));
+            for(let i = 0; i < this.points.length; i ++) {
+                let point = this.points[i];
+                this.context.fillText(`Velocity: ${point.velocity} | Radius: ${point.radius} | Direction: ${point.direction} | Color: ${point.color} | DrawLine: ${point.drawLine} | DrawConectLine: ${point.drawConectLine}`, Xcoord(true), Ycoord(1 + i));
+            }
+
+            
+
+
+            this.context.closePath()
+
+        }
+
+    }
+
     drawFrame = () => {
         requestAnimationFrame((delta) => {
             //Determina o tamanho do frame
@@ -132,6 +182,8 @@ class Spyrograph {
                 this.drawLine(actualPoint);
                 this.drawConectLines(actualPoint, previousPoint)
             }
+
+            this.drawDebug();
 
             //Recalcula novo frame
             if (this.isRunning) this.drawFrame();
