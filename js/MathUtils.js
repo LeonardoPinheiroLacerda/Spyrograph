@@ -9,11 +9,11 @@ class MathUtils {
     getDistance = (velocity, time) => {
         return velocity * time;
     }
-    
+
     getVelocity = (distance, time) => {
         return (this.cycleDistance * distance) / time;
     }
-    
+
     getTime = (distance, velocity) => {
         return (this.cycleDistance * distance) / velocity;
     }
@@ -21,7 +21,7 @@ class MathUtils {
     calcPencilPosition = (radius, distance, centerX, centerY) => {
         const x = radius * Math.cos((this.cycleDistance * distance)) + centerX;
         const y = radius * Math.sin((this.cycleDistance * distance)) + centerY;
-        return {x, y};
+        return { x, y };
     }
 
     calcCenterPoint = (canvas) => {
