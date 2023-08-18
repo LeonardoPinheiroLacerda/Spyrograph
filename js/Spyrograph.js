@@ -75,17 +75,36 @@ class Spyrograph {
     }
 
     drawConectLines = (actualPoint, previousPoint) => {
-        if (actualPoint.drawConectLine && previousPoint.history) {
-            for (let i = 0; i < actualPoint.history.length; i++) {
-                this.context.beginPath();
 
+        //A partir do segundo ponto, pois o anterior tem um historico de percurso
+        if (actualPoint.drawConectLine && previousPoint.history) {
+            this.context.beginPath();
+
+            for (let i = 0; i < actualPoint.history.length; i++) {
                 this.context.lineTo(previousPoint.history[i].x, previousPoint.history[i].y)
                 this.context.lineTo(actualPoint.history[i].x, actualPoint.history[i].y)
-
-                this.context.stroke();
-                this.context.closePath();
             }
+
+            this.context.stroke();
+            this.context.closePath();
+
+        //Primeiro ponto da lista, pois o ponto pai é fixo
+        }else if(actualPoint.drawConectLine){
+            const {x, y} = this.mathUtils.calcCenterPoint(canvas);
+
+            this.context.beginPath();
+
+            for (let i = 0; i < actualPoint.history.length; i++) {
+                this.context.lineTo(x, y)
+                this.context.lineTo(actualPoint.history[i].x, actualPoint.history[i].y)
+            }
+            
+            this.context.stroke();
+            this.context.closePath();
+
         }
+
+
     }
 
     drawFrame = () => {
