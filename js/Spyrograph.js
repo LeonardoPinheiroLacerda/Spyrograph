@@ -8,7 +8,7 @@ class Spyrograph {
     }
 
     debugOption = {
-        enabled: true,
+        enabled: false,
         backgroundColor: 'rgba(255, 255, 255, 0.3)',
         fontColor: 'black',
         fontFamily: 'Monospace',
