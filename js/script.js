@@ -95,7 +95,7 @@ function addPoint() {
 
         <div class="d-flex flex-row mt-3">
 
-            <div class="me-auto">
+            <!--<div class="me-auto">
                 <button class="btn btn-success ${(id === 1 ? 'disabled' : '')}" id="point-arrow-up-${id}" >
                     <i class="fa fa-arrow-up"></i>
                 </button>    
@@ -103,7 +103,7 @@ function addPoint() {
                 <button class="btn btn-success" id="point-arrow-down-${id}">
                     <i class="fa fa-arrow-down"></i>
                 </button>
-            </div>
+            </div>-->
 
             <button class="btn btn-danger ms-auto" id="point-delele-${id}" onclick="removePoint(${id})">
                 <i class="fa fa-trash"></i>
