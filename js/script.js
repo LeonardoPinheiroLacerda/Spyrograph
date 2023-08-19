@@ -58,27 +58,27 @@ function addPoint() {
         <label for="point-distance-${id}" class="form-label">Distância</label>
         <input type="range" class="form-range" min="0" max="100" step="1" id="point-distance-${id}" onchange="editPoint(${id})">
 
-        <div class="d-flex flex-row">
+        <div class="d-flex flex-row" style="width:15rem">
 
             <div class="w-75">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="point-direction-${id}" onchange="editPoint(${id})">
                     <label class="form-check-label" for="point-direction-${id}">
-                        Gira em sentido horário
+                        Sentido horário
                     </label>
                 </div>
 
                 <div class="form-check">
                     <input class="form-check-input" checked="true" type="checkbox" id="point-line-${id}" onchange="editPoint(${id})">
                     <label class="form-check-label" for="point-line-${id}">
-                        Rastro
+                        Desenha rastro
                     </label>
                 </div>
 
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="point-connection-${id}" onchange="editPoint(${id})">
-                    <label class="form-check-label" for="point-direction-${id}">
-                        Conexões com ponto pai
+                    <label class="form-check-label" for="point-connection-${id}">
+                        Desenha conexões
                     </label>
                 </div>
             </div>

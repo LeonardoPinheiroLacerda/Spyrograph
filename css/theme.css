@@ -7,6 +7,6 @@
     z-index: -1;
 }
 
-.point-modal{
-    width: 30rem !important
+.modal-content {
+    min-width: 19rem
 }
