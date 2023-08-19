@@ -56,7 +56,7 @@ function addPoint() {
         <input type="range" class="form-range" min="0" max="1" step="0.01" id="point-speed-${id}" onchange="editPoint(${id})">
 
         <label for="point-distance-${id}" class="form-label">Distância</label>
-        <input type="range" class="form-range" min="0" max="100" step="1" id="point-distance-${id}" onchange="editPoint(${id})">
+        <input type="range" class="form-range" min="0" max="50" step="1" id="point-distance-${id}" onchange="editPoint(${id})">
 
         <div class="d-flex flex-row" style="width:15rem">
 

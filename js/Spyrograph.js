@@ -67,7 +67,8 @@ class Spyrograph {
             radius,             //Distancia do ponto pai
             distance,           //Distancia percorrida durante o execução
             previousPoint.x,    //Cordenada X do ponto pai
-            previousPoint.y     //Cordenada Y do ponto pai
+            previousPoint.y,     //Cordenada Y do ponto pai
+            canvas
         );
 
         actualPoint.x = x;

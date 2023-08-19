@@ -18,7 +18,17 @@ class MathUtils {
         return (this.cycleDistance * distance) / velocity;
     }
 
-    calcPencilPosition = (radius, distance, centerX, centerY) => {
+    calcPencilPosition = (radius, distance, centerX, centerY, canvas) => {
+
+        //radius vai ser igual a porcentagem do menor valor entre width e height
+        const {width, height} = canvas;
+
+        if(height < width) {
+            radius = height / 100 * radius;
+        } else {
+            radius = width / 100 * radius;
+        }
+
         const x = radius * Math.cos((this.cycleDistance * distance)) + centerX;
         const y = radius * Math.sin((this.cycleDistance * distance)) + centerY;
         return { x, y };
