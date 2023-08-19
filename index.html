@@ -8,7 +8,12 @@
     <title>Spyrograph</title>
 
     <link rel="stylesheet" href="css/theme.css">
+    <!-- https://fontawesome.com/v4/icons/ -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script defer src="js/MathUtils.js"></script>
     <script defer src="js/Spyrograph.js"></script>
     <script defer src="js/script.js"></script>
@@ -16,6 +21,37 @@
 
 <body>
     <canvas id="canvas"></canvas>
+
+    
+    <button type="button" class="btn btn-lg btn-dark position-absolute top-0 end-0 m-3" data-bs-toggle="modal"
+        data-bs-target="#modal">
+        <i class="fa fa-bars"></i>
+    </button>
+
+    <div class="modal fade text-light" id="modal" tabindex="-1" aria-hidden="true" data-bs-theme="dark">
+        <div class="modal-dialog position-absolute m-4 top-0 end-0 point-modal modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Pontos</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div id="modal-body" class="modal-body">
+
+                    
+                </div>
+
+
+
+                <button class="btn btn-success m-1" onclick="addPoint()">
+                    <i class="fa fa-plus-circle"></i>
+                </button>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

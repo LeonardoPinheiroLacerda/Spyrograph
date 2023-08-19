@@ -8,11 +8,11 @@ class Spyrograph {
     }
 
     debugOption = {
-        enabled: false,
-        backgroundColor: 'rgba(255, 255, 255, 0.7)',
+        enabled: true,
+        backgroundColor: 'rgba(255, 255, 255, 0.3)',
         fontColor: 'black',
         fontFamily: 'Monospace',
-        fontSize: 20,
+        fontSize: 15,
 
 
         box: {
@@ -137,7 +137,7 @@ class Spyrograph {
             this.context.beginPath();
 
             this.context.fillStyle = this.debugOption.backgroundColor;
-            this.context.fillRect(this.debugOption.box.x, this.debugOption.box.y, 1200, (this.debugOption.box.margin * 2) + (this.debugOption.fontSize + this.debugOption.box.lineSpacing) * (this.points.length + 1));
+            this.context.fillRect(this.debugOption.box.x, this.debugOption.box.y, 900, (this.debugOption.box.margin * 2) + (this.debugOption.fontSize + this.debugOption.box.lineSpacing) * (this.points.length + 1));
             this.context.fill();
 
             this.context.font = `${this.debugOption.fontSize}px ${this.debugOption.fontFamily}`;
@@ -209,6 +209,7 @@ class Spyrograph {
             }
         )
         this.restart();
+        return this.points.length - 1;
     }
 
     editPoint = (index, { velocity, radius, direction, color, drawLine, drawConectLine }) => {
